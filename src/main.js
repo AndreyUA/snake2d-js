@@ -139,6 +139,8 @@ function getRandomInt(min, max) {
 document.addEventListener("keydown", function (e) {
   switch (e.code) {
     case "ArrowUp": {
+      if (snake.dy === 16 && -config.sizeCell === -16) return;
+
       snake.dy = -config.sizeCell;
       snake.dx = 0;
 
@@ -146,6 +148,8 @@ document.addEventListener("keydown", function (e) {
     }
 
     case "ArrowLeft": {
+      if (snake.dx === 16 && -config.sizeCell === -16) return;
+
       snake.dx = -config.sizeCell;
       snake.dy = 0;
 
@@ -153,6 +157,8 @@ document.addEventListener("keydown", function (e) {
     }
 
     case "ArrowDown": {
+      if (snake.dy === -16 && config.sizeCell === 16) return;
+
       snake.dy = config.sizeCell;
       snake.dx = 0;
 
@@ -160,6 +166,8 @@ document.addEventListener("keydown", function (e) {
     }
 
     case "ArrowRight": {
+      if (snake.dx === -16 && config.sizeCell === 16) return;
+
       snake.dx = config.sizeCell;
       snake.dy = 0;
 
@@ -167,6 +175,8 @@ document.addEventListener("keydown", function (e) {
     }
 
     default: {
+      if (snake.dy === 16 && -config.sizeCell === -16) return;
+
       snake.dy = -config.sizeCell;
       snake.dx = 0;
     }
